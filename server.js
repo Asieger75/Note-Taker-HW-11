@@ -27,6 +27,7 @@ app.get('/api/notes', function (req, res) {
 app.post('/api/notes', function (req, res) {
   let newNote = req.body;
   newNote.id = uuid();
+  console.log;
   Notes.push(newNote);
   res.json(newNote);
   fs.writeFile('db/db.json', JSON.stringify(Notes), err => { if (err){ throw err;} return true; });
